@@ -1,0 +1,28 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "Clearpass Detected a device conflict.",
+    "sections": [{
+        "activityTitle": "Clearpass Detected a device conflict.",
+        "activitySubtitle": "**CONFLICT DETECTED**",
+        "activityImage": "https://teamsnodesample.azurewebsites.net/static/img/image5.png",
+        "facts": [{
+            "name": "Username",
+            "value": "%{Authentication:Full-Username}"
+        }, {
+            "name": "MAC Address",
+            "value": "%{Connection:Client-Mac-Address-Colon}"
+        }, {
+            "name": "Location by Device",
+            "value": "%{Radius:Aruba:Aruba-Location-Id}"
+        }],
+        "markdown": true
+    }],
+	"potentialAction": [{
+        "@type": "OpenUri",
+        "name": "Investigate in Clearpass",
+        "targets": [ { "os": "default", "uri": "https://CLEARPASS-SERVER.COM/tips" } ]
+		
+	}]
+}
